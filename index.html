@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profession Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h3>New Employees</h3>
+        <form>
+            <div class="form-input">
+                <label for="name">Enter name</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div class="form-input">
+                <label for="profession">Enter Profession</label>
+                <input type="text" name="profession" id="profession">
+            </div>
+            <div class="form-input">
+                <label for="age">Enter Age</label>
+                <input type="text" name="age" id="age">
+            </div>
+        </form>
+        <button type="submit">Add User</button>
+
+        <h3>Added Employees</h3>
+
+        <p class="error"></p>
+
+        <div id="output">
+            <table>
+                <caption>You have 0 Employees</caption>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Profession</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

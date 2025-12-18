@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 760px;
+    margin: 40px auto;
+    padding: 28px;
+    background: #000000;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.897);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+    color: #fefefe;
+    font-weight: 600;
+}
+
+body {
+    background: linear-gradient(180deg,#1a1b1c 0%, #060606 100%);
+    color: #fdfdfd;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    min-height: 100vh;
+    padding: 24px;
+}
+
+form {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 16px;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.form-input label {
+    font-size: 0.9rem;
+    color: #f0f2f5;
+}
+
+.form-input input[type="text"] {
+    appearance: none;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-input input[type="text"]:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37,99,235,0.08);
+}
+
+button[type="submit"], button {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 10px 16px;
+    background: linear-gradient(180deg,#2563eb 0%, #1e40af 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(37,99,235,0.18);
+    transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
+    margin-bottom: 20px;
+}
+
+button[type="submit"]:hover, button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(37,99,235,0.18);
+}
+
+#output {
+    margin-top: 18px;
+    padding: 14px;
+    border-radius: 10px;
+    background: #080808;
+    border: 1px dashed #e6eefc;
+    color: #ffffff;
+    min-height: 48px;
+}
+
+.employee-item {
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: rgb(4, 4, 4);
+    border: 1px solid #e6e9ef;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.employee-item .meta {
+    color: #474c55;
+    font-size: 0.95rem;
+}
+
+.employee-item .remove {
+    background: transparent;
+    border: none;
+    color: #dc2626;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+@media (max-width: 520px) {
+    .container {
+        padding: 18px;
+        margin: 20px;
+    }
+    button[type="submit"] { width: 100%; }
+}
+table.employees-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+}
+table.employees-table th, table.employees-table td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: left;
+}
+table.employees-table th {
+    background-color: #222;
+}
+table.employees-table caption {
+    caption-side: top;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+}   
+
