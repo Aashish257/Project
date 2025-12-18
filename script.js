@@ -43,8 +43,8 @@ function updateOutput() {
     }
 
     let html = `<table class="employees-table"><caption>You have ${employees.length} Employee${employees.length > 1 ? 's' : ''}</caption><thead><tr><th>Name</th><th>Profession</th><th>Age</th></tr></thead><tbody>`;
-    employees.forEach(emp => {
-        html += `<tr><td>${escapeHtml(emp.name)}</td><td>${escapeHtml(emp.profession)}</td><td>${escapeHtml(emp.age)}</td></tr>`;
+    employees.forEach((emp, index) => {
+        html += `<tr><td>${escapeHtml(emp.name)}</td><td>${escapeHtml(emp.profession)}</td><td>${escapeHtml(emp.age)}</td><td><button class="remove" data-index="${index}">Delete</button></td></tr>`;
     });
     html += '</tbody></table>';
     
@@ -59,4 +59,17 @@ function escapeHtml(str) {
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#39;');
+}
+
+
+if (output) {
+    output.addEventListener('click', function(e) {
+        const btn = e.target.closest('.remove');
+        if (!btn) return;
+        const idx = Number(btn.dataset.index);
+        if (!Number.isNaN(idx) && idx >= 0 && idx < employees.length) {
+            employees.splice(idx, 1);
+            updateOutput();
+        }
+    });
 }
