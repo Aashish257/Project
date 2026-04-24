@@ -1,6 +1,4 @@
 // sportsDay.js
-const readline = require('readline');
-
 function OpeningCeremony(initialScore, callback) {
     console.log("========= Opening Ceremony has begun! =========");
 
@@ -75,17 +73,12 @@ function HighJump(score, callback) {
     console.log("============ High Jump is starting ============");
 
 
-    const rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout
-    });
-
-
-    rl.question(" What color secured the highest jump? (red/blue/green/yellow): ", (answer) => {
-
+    // Delay prompt slightly so browser console updates before pausing
+    setTimeout(() => {
+        let answer = prompt(" What color secured the highest jump? (red/blue/green/yellow): ");
+        if (!answer) answer = "";
 
         const color = answer.trim().toLowerCase();
-
 
         if (['red', 'blue', 'green', 'yellow'].includes(color)) {
             score[color] += 100;
@@ -96,12 +89,8 @@ function HighJump(score, callback) {
 
         console.log(" Updated Score after HighJump:", score);
 
-
-        rl.close();
-
-
         callback(score);
-    });
+    }, 100);
 }
 
 
@@ -120,9 +109,6 @@ function AwardCeremony(score) {
 
     console.log(" SPORTS DAY IS OFFICIALLY OVER! ");
 }
-
-
-
 
 
 OpeningCeremony({ red: 5, blue: 2, green: 6, yellow: 1 }, Race100M);
