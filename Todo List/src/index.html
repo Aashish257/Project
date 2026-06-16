@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Planner - LocalStorage Todo</title>
+    <!-- Link Google Font Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Title Header -->
+        <h1 class="todo-title">To-Do List</h1>
+
+        <!-- Task input fields form -->
+        <div class="todo-form">
+            <input type="text" class="todo-name-input" placeholder="Item Name">
+            <input type="date" class="todo-date-input" placeholder="Deadline">
+            <select class="todo-priority-input">
+                <option value="" disabled selected hidden>Priority</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+            <button type="button" class="todo-add-btn">Add Item</button>
+        </div>
+
+        <!-- Today's TodoList Section -->
+        <div class="list-section">
+            <h2 class="section-title">Today's TodoList</h2>
+            <div id="today-list" class="tasks-container">
+                <!-- Dynamically populated from script.js -->
+            </div>
+        </div>
+
+        <!-- Future TodoList Section -->
+        <div class="list-section">
+            <h2 class="section-title">Future TodoList</h2>
+            <div id="future-list" class="tasks-container">
+                <!-- Dynamically populated from script.js -->
+            </div>
+        </div>
+
+        <!-- Completed TodoList Section -->
+        <div class="list-section">
+            <h2 class="section-title">Completed TodoList</h2>
+            <div id="completed-list" class="tasks-container">
+                <!-- Dynamically populated from script.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Script connection -->
+    <script src="script.js"></script>
+</body>
+
+</html>

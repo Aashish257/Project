@@ -1,0 +1,41 @@
+<!--
+Purpose: Structural grid layouts for sequential API data sections.
+Responsibility: Houses start buttons and three display panel targets.
+Dependencies: styles.css, script.js
+Concepts Used: HTML Sections, buttons.
+Learning Outcomes: Orchestrating multiple content grids.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sequential Multi-API Loader</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- STEP 1: Add trigger button -->
+    <button id="load-data-btn">Start Loading Data</button>
+    <!-- STEP 2: Create section container for Posts data -->
+    <div class="dashboard-wrapper">
+        <section>
+            <h2>Posts</h2>
+            <div id="posts-container"></div>
+        </section>
+        <!-- STEP 3: Create section container for Products data -->
+        <section>
+            <h2>Products</h2>
+            <div id="products-container"></div>
+        </section>
+        <!-- STEP 4: Create section container for Todos data -->
+        <section>
+            <h2>Todos</h2>
+            <div id="todos-container"></div>
+        </section>
+    </div>
+    <!-- STEP 5: Load script.js -->
+    <script src="script.js"></script>
+</body>
+
+</html>

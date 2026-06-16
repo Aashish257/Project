@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg-dark: #0c0c0c;
+    --bg-card: #18181c;
+    --text-light: #ffffff;
+    --text-muted: #88888b;
+    --accent-green: #10b981;
+    --accent-red: #ef4444;
+    --border-dark: #2d2d2d;
+    --font-family: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: var(--font-family);
+    min-height: 100vh;
+    padding: 40px 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Controls bar styling */
+.controls-bar {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    align-items: center;
+}
+
+.search-input {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-dark);
+    color: var(--text-light);
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: var(--font-family);
+    outline: none;
+    width: 300px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-input:focus {
+    border-color: var(--text-muted);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05);
+}
+
+.sort-mkt-btn,
+.sort-percent-btn {
+    background-color: transparent;
+    color: var(--text-light);
+    border: 1px solid var(--border-dark);
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: var(--font-family);
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+}
+
+.sort-mkt-btn:hover,
+.sort-percent-btn:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: var(--text-muted);
+}
+
+.sort-mkt-btn:active,
+.sort-percent-btn:active {
+    transform: scale(0.98);
+}
+
+/* Table styling */
+.crypto-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.crypto-table th {
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--border-dark);
+    padding: 16px;
+    text-align: left;
+}
+
+.crypto-table td {
+    padding: 18px 16px;
+    border-bottom: 1px solid var(--border-dark);
+    font-size: 0.95rem;
+    font-weight: 500;
+    vertical-align: middle;
+}
+
+.crypto-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.crypto-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Columns formatting */
+.col-name {
+    width: 25%;
+}
+
+.col-symbol {
+    width: 12%;
+    text-transform: uppercase;
+}
+
+.col-price {
+    width: 15%;
+}
+
+.col-volume {
+    width: 18%;
+}
+
+.col-change {
+    width: 15%;
+}
+
+.col-mktcap {
+    width: 15%;
+}
+
+/* Coin Cell layout */
+.coin-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.coin-image {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.coin-name {
+    font-weight: 600;
+}
+
+.coin-symbol-text {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+/* Percentage color coding */
+.green-text {
+    color: var(--accent-green);
+    font-weight: 600;
+}
+
+.red-text {
+    color: var(--accent-red);
+    font-weight: 600;
+}
+
+/* Muted text styling */
+.text-muted-display {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Loading and error states */
+.status-row td {
+    text-align: center;
+    color: var(--text-muted);
+    font-weight: 500;
+    padding: 40px;
+}

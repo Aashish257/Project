@@ -1,0 +1,242 @@
+/*
+Purpose: Layout and presentation of the LocalStorage Todo task planner.
+Responsibility: Defines dark/light card variants, aligns list cards, formats typography, and adds micro-interactions.
+Dependencies: None
+Concepts Used: CSS Flexbox, Grid-row alignment, Media queries.
+Learning Outcomes: Creating a polished input dashboard.
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Title Header */
+.todo-title {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+}
+
+/* Form layout - aligned in a single horizontal row */
+.todo-form {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.todo-name-input {
+    flex: 3;
+    height: 44px;
+    padding: 10px 16px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    outline: none;
+}
+
+.todo-date-input {
+    flex: 2;
+    height: 44px;
+    padding: 10px 16px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    outline: none;
+    color: #555555;
+}
+
+.todo-priority-input {
+    flex: 2;
+    height: 44px;
+    padding: 10px 16px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    outline: none;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.todo-add-btn {
+    flex: 1.5;
+    height: 44px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.todo-add-btn:hover {
+    background-color: #222222;
+}
+
+.todo-add-btn:active {
+    transform: scale(0.97);
+}
+
+/* Sections */
+.list-section {
+    margin-bottom: 32px;
+}
+
+.section-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #000000;
+}
+
+.tasks-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Task Card - Incomplete (Black Card) */
+.task-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    padding: 18px 24px;
+    width: 100%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-card.incomplete {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.task-card.completed {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #888888;
+}
+
+/* Card Column Layouts */
+.task-name {
+    flex: 3.5;
+    font-size: 0.95rem;
+    font-weight: 500;
+    word-break: break-word;
+    padding-right: 15px;
+}
+
+.task-date {
+    flex: 2;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: left;
+}
+
+.task-priority {
+    flex: 2.5;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: left;
+}
+
+.task-actions {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Icons styling */
+.action-icon {
+    font-size: 1.15rem;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    color: inherit;
+    transition: transform 0.1s ease, opacity 0.2s;
+}
+
+.action-icon:hover {
+    transform: scale(1.15);
+}
+
+.task-card.incomplete .tick-btn:hover {
+    color: #10b981; /* Green checkmark hover */
+}
+
+.task-card.incomplete .delete-btn:hover {
+    color: #ef4444; /* Red trash hover */
+}
+
+.task-card.completed .delete-btn:hover {
+    color: #ef4444;
+}
+
+/* Responsive Viewports */
+@media (max-width: 768px) {
+    body {
+        padding: 24px 12px;
+    }
+    .todo-title {
+        font-size: 2.2rem;
+    }
+    .todo-form {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .todo-name-input,
+    .todo-date-input,
+    .todo-priority-input,
+    .todo-add-btn {
+        width: 100%;
+        flex: none;
+    }
+    .task-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 16px;
+    }
+    .task-name,
+    .task-date,
+    .task-priority {
+        text-align: left;
+        width: 100%;
+        padding-right: 0;
+    }
+    .task-actions {
+        width: 100%;
+        justify-content: flex-start;
+        margin-top: 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 10px;
+    }
+    .task-card.completed .task-actions {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+}

@@ -1,0 +1,102 @@
+<!--
+Purpose: Structural markup for the restaurant platform.
+Responsibility: Houses landing section, menu grid, order display, status metrics, and scripts.
+Dependencies: styles.css, script.js
+Concepts Used: HTML5, semantic tags, ID elements.
+Learning Outcomes: Creating a multi-view application.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger Stop - Restaurant Ordering Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <aside id="sidebar">
+            <div class="logo">
+                <img src="image/img.svg" alt="Burger Stop Logo" width="300px" height="200px">
+                <h1>Your restaurant Menu</h1>
+                <p>slogan</p>
+            </div>
+            <hr>
+            <h2>Quick Links</h2>
+            <ol>
+                <li>Home</li>
+                <li>Your Orders</li>
+                <li>Wallet</li>
+                <li>Profile</li>
+                <li>Logout</li>
+            </ol>
+
+            <hr>
+
+
+            <h2>More About Us</h2>
+
+            <ol>
+                <li>Our Blog</li>
+                <li>Upcoming Dishes</li>
+                <li>Our Story</li>
+                <li>Social Media Links</li>
+            </ol>
+        </aside>
+        <section id="main">
+            <div class="nav">
+                <div class="search-container">
+                    <input type="search" name="search" id="search" placeholder="Search food items">
+                </div>
+                <button type="button" class="btn-primary">Signup</button>
+                <button type="button" class="btn-primary">Login</button>
+                <div class="nav-avatar">
+                    <img src="image/profile.png" alt="User Avatar">
+                </div>
+            </div>
+
+            <section class="hero" id="hero-section">
+                <img src="image/hero.svg" alt="Hero Image">
+            </section>
+
+            <!-- Order Tracker Panel (Initially hidden, shown on order placement) -->
+            <section id="order-tracker" class="order-tracker-card hidden">
+                <div class="tracker-title">Live Order Tracker</div>
+                <div class="tracker-steps-container">
+                    <div class="tracker-steps">
+                        <div class="tracker-progress-line" id="progress-line"></div>
+                        <div class="step-node active" id="step-1">1</div>
+                        <div class="step-node" id="step-2">2</div>
+                        <div class="step-node" id="step-3">3</div>
+                        <div class="step-node" id="step-4">4</div>
+                    </div>
+                </div>
+                <div class="tracker-labels">
+                    <div class="tracker-label active" id="label-1">Taking Order</div>
+                    <div class="tracker-label" id="label-2">Preparing</div>
+                    <div class="tracker-label" id="label-3">Paying</div>
+                    <div class="tracker-label" id="label-4">Completed</div>
+                </div>
+                <div id="order-summary" class="order-items-summary">
+                    Initializing your order...
+                </div>
+            </section>
+
+            <section class="catelog">
+                <div class="catelog-header">
+                    <h2>Menu</h2>
+                    <button type="button" id="place-order-btn" class="btn-primary">Place Order</button>
+                </div>
+                <div class="menu-grid">
+                </div>
+            </section>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

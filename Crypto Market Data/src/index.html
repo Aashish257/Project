@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Market Tracker</title>
+    <!-- Link Google Fonts for Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Controls area with search input and sorting action buttons -->
+        <div class="controls-bar">
+            <input type="text" class="search-input" placeholder="Search by name or symbol">
+            <button type="button" class="sort-mkt-btn">Sort By Mkt Cap</button>
+            <button type="button" class="sort-percent-btn">Sort By percentage change</button>
+        </div>
+
+        <!-- Table element with proper columns -->
+        <table class="crypto-table">
+            <thead>
+                <tr>
+                    <th class="col-name">Name</th>
+                    <th class="col-symbol">Symbol</th>
+                    <th class="col-price">Price</th>
+                    <th class="col-volume">Total Volume</th>
+                    <th class="col-change">24h Change</th>
+                    <th class="col-mktcap">Market Cap</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dynamically populated from script.js -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Script connection -->
+    <script src="script.js"></script>
+</body>
+
+</html>

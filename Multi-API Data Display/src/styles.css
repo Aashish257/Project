@@ -1,0 +1,136 @@
+/*
+Purpose: Design grid boards for multiple categories.
+Responsibility: Formats data cards, loading spinners, and spacing.
+Dependencies: None
+Concepts Used: CSS flexboxes.
+Learning Outcomes: Creating organized dashboards.
+*/
+
+/* STEP 1: Reset styles and configure main dashboard container */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 16px;
+    background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 20px 0;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 126, 95, 0.4);
+}
+
+section {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 10px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: #333;
+    margin-top: 0;
+}
+
+/* STEP 2: Style cards for each category (Posts, Products, Todos) */
+#posts-container,
+#products-container,
+#todos-container {
+    display: grid;
+    gap: 10px;
+}
+
+.post-card,
+.product-card,
+.todo-card {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin: 5px 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post-card:hover,
+.product-card:hover,
+.todo-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.post-card h3,
+.product-card h3,
+.todo-card h3 {
+    color: #667eea;
+    margin: 0 0 10px 0;
+}
+
+.post-card p,
+.product-card p,
+.todo-card p {
+    color: #555;
+    margin: 5px 0;
+}
+
+.product-card button {
+    background: #4caf50;
+    padding: 8px 16px;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.product-card button:hover {
+    background: #45a049;
+}
+
+/* STEP 3: Style the trigger button and active loading states */
+.loading {
+    color: #667eea;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.error {
+    color: #e74c3c;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.dashboard-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+    .dashboard-wrapper {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    section {
+        flex: 1;       /* Divides the horizontal space equally among the 3 columns */
+        margin: 0;     /* Resets margins so columns align neatly */
+        width: auto;
+    }
+}
