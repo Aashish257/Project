@@ -1,0 +1,176 @@
+﻿/*
+Purpose: Style card panels.
+Responsibility: Layout display lists, borders, and margins.
+Dependencies: None
+Concepts Used: CSS flexboxes.
+Learning Outcomes: Creating a structured dashboard.
+*/
+
+/* STEP 1: Style dashboard panels */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1f2937;
+    background: hsl(60, 55%, 44%);
+}
+
+.container {
+    width: min(960px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+header {
+    margin-bottom: 24px;
+}
+
+header h1 {
+    margin: 0 0 8px;
+    font-size: 36px;
+    color: #111827;
+}
+
+header p {
+    margin: 0;
+    color: #4b5563;
+}
+
+.time-card,
+.search-card {
+    margin-bottom: 20px;
+    padding: 24px;
+    border: 1px solid #d8dee9;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.time-card h2,
+.search-card h2 {
+    margin: 0 0 16px;
+    font-size: 22px;
+    color: #111827;
+}
+
+.timezone-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.timezone-field {
+    padding: 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    background: #f9fafb;
+}
+
+.timezone-field span {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #6b7280;
+}
+
+.timezone-field strong {
+    display: block;
+    word-break: break-word;
+    color: #111827;
+}
+
+/* STEP 2: Style search form input and submit buttons */
+#timezone-form {
+    display: flex;
+    align-items: end;
+    gap: 12px;
+}
+
+#timezone-form label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+#address-input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #111827;
+    outline: none;
+}
+
+#address-input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.16);
+}
+
+#search-btn {
+    padding: 13px 22px;
+    border: 0;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    background: #2563eb;
+    cursor: pointer;
+}
+
+#search-btn:hover {
+    background: #1d4ed8;
+}
+
+#search-btn:disabled {
+    cursor: not-allowed;
+    background: #93c5fd;
+}
+
+/* STEP 3: Design error message styling and status blocks */
+#error-message {
+    min-height: 22px;
+    margin: 12px 0 0;
+    color: #b91c1c;
+    font-weight: 700;
+}
+
+.status {
+    margin: 0;
+    color: #4b5563;
+}
+
+.status.error {
+    color: #b91c1c;
+    font-weight: 700;
+}
+
+@media (max-width: 640px) {
+    .container {
+        width: min(100% - 20px, 960px);
+        padding: 24px 0;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    #timezone-form,
+    .timezone-details {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #search-btn {
+        width: 100%;
+    }
+}

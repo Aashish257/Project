@@ -1,0 +1,50 @@
+<!--
+Purpose: Structural elements for geolocation timezone details.
+Responsibility: Display sections for local and target timezone details.
+Dependencies: styles.css, script.js
+Concepts Used: HTML structure.
+Learning Outcomes: Displaying geolocation metrics.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Timezone Finder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Timezone API</h1>
+            <p>Find your current timezone and search timezone by address.</p>
+        </header>
+
+        <section id="local-time" class="time-card">
+            <h2>Your Current Timezone</h2>
+            <div id="local-timezone-result">
+                <p>Fetching your location...</p>
+            </div>
+        </section>
+
+        <section id="search" class="search-card">
+            <h2>Enter Address</h2>
+            <form id="timezone-form">
+                <label for="address-input">Enter Address</label>
+                <input type="text" id="address-input" placeholder="Example: Mumbai, India" required>
+                <button type="submit" id="search-btn">Search</button>
+            </form>
+            <p id="error-message"></p>
+        </section>
+
+        <section id="target-timezone" class="time-card">
+            <h2>Address Timezone</h2>
+            <div id="target-timezone-result">
+                <p>Search an address to view timezone details.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
