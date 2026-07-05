@@ -24,7 +24,7 @@ This repository contains a collection of web applications built as part of the A
 ### 4. Retrieve Timezone Information
 * **Description**: Translates coordinate points into comprehensive timezone details. Uses browser Geolocation coordinates and the Geoapify API.
 * **Tech Stack**: HTML5 Geolocation API, Geoapify Reverse Geocoding API, Vanilla JS.
-* **🔗 Live Link**: [Open Timezone Information]https://golden-khapse-b23770.netlify.app/)
+* **🔗 Live Link**: [Open Timezone Information](https://golden-khapse-b23770.netlify.app/)
 
 ### 5. Retrieve and Display User Information Using IP Address
 * **Description**: A location dashboard that resolves client public IP addresses, displays location coordinates, embeds a Google map, ticks a timezone-localized clock, and filters local postal code branch locations.
