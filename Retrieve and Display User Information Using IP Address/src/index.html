@@ -1,0 +1,93 @@
+<!--
+Purpose: Structural component for location map and postal directories.
+Responsibility: Display layout elements, iframe container, and post office search cards.
+Dependencies: styles.css, script.js
+Concepts Used: HTML blocks, Iframe, search fields.
+Learning Outcomes: Building locator dashboards.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>IP Geolocation & Postal Locator</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <!-- STEP 1: Add IP display and loading action buttons -->
+    <section id="screen1" class="screen active">
+        <div id="left">
+            <h1>Post Office Application.</h1>
+            <p>This Application Allows you to extract information about the nearest Post Offices, based on your
+                location.</p>
+            <img src="images/image.svg" alt="Location Icon" class="location-icon">
+        </div>
+        <div id="right">
+            <p>Your Current IP Address is <span id="ip-address-display">Loading...</span></p>
+            <button class="button" onclick="showScreen2()">Get Started</button>
+        </div>
+    </section>
+
+    <!-- Replace your current #screen2 block inside index.html with this structured skeleton -->
+    <section id="screen2" class="screen">
+
+        <!-- SECTION A: Header Information Bar (Dark background) -->
+        <div class="info-header">
+            <h2>IP Address: <span id="info-ip">127.0.0.1</span></h2>
+            <div class="info-grid">
+                <div class="info-col">
+                    <p>Lat: <span id="info-lat"></span></p>
+                    <p>Long: <span id="info-lon"></span></p>
+                </div>
+                <div class="info-col">
+                    <p>City: <span id="info-city"></span></p>
+                    <p>Region: <span id="info-region"></span></p>
+                </div>
+                <div class="info-col">
+                    <p>Organisation: <span id="info-org"></span></p>
+                    <p>Hostname: <span id="info-host"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION B: Map Section (Slate Blue background) -->
+        <div class="map-section">
+            <h2>Your Current Location</h2>
+            <!-- Place the map iframe inside this container. JS will inject the src dynamically. -->
+            <div class="map-container">
+                <iframe id="map-iframe" src="" frameborder="0" width="100%" height="360px"></iframe>
+            </div>
+        </div>
+
+        <!-- SECTION C: More Info & Postal Directory (Black background) -->
+        <div class="postal-section">
+            <div class="more-info">
+                <h2>More Information About You</h2>
+                <p>Time Zone: <span id="info-timezone"></span></p>
+                <p>Date And Time: <span id="info-datetime"></span></p>
+                <p>Pincode: <span id="info-pincode"></span></p>
+                <p>Message: <span id="info-message">Number of pincode(s) found: 0</span></p>
+            </div>
+
+            <div class="post-offices">
+                <h2>Post Offices Near You</h2>
+                <!-- Search bar with Search By Name placeholder -->
+                <div class="search-wrapper">
+                    <input type="search" id="search-input" placeholder="Search By Name">
+                </div>
+                <!-- Dynamic target container for card rendering -->
+                <div id="post-offices-grid" class="post-offices-grid">
+                    <!-- JavaScript will dynamically insert card divs here -->
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- STEP 5: Link script.js -->
+    <script src="script.js"></script>
+</body>
+
+</html>
