@@ -38,8 +38,3 @@ This repository contains a collection of web applications built as part of the A
 
 ---
 
-## ⚙️ How to Deploy & View Projects
-1. Push this root repository to your GitHub.
-2. In your GitHub repository settings, navigate to **Pages**.
-3. Under **Build and deployment**, select **Deploy from a branch** and choose `main` (or `master`) as your source, then click **Save**.
-4. After a minute, replace `your-github-username` and `your-repository-name` in the links above with your actual details to access your live portfolio!
