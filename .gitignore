@@ -1,6 +1,7 @@
-# Exclude all markdown files recursively
+# Exclude all markdown files recursively except the root README.md
 *.md
 **/*.md
+!/README.md
 
 # Exclude incomplete projects (do not push to git)
 /Project 6 - Retrieve and Display User Information Using IP Address/
