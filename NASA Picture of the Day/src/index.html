@@ -1,0 +1,49 @@
+<!--
+Purpose: Structural HTML layout for NASA APOD searcher.
+Responsibility: Contains search-form, search-input, current-image-container, and search-history list.
+Dependencies: styles.css, script.js
+Concepts Used: Form layouts, specific target IDs.
+Learning Outcomes: Formatting standard structure templates.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>NASA - Astronomy Picture of the Day</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- STEP 1: Create search form element with id="search-form" and date input with id="search-input" -->
+    <main class="container">
+        <header class="main-header">
+            <h1>NASA Space Archives</h1>
+            <p>Explore the cosmos: A new astronomical picture or video featured every day.</p>
+        </header>
+
+
+        <!-- Main APOD Display Card -->
+        <div id="current-image-container" class="media-card">
+            <!-- JS will dynamically insert title, image/iframe, and explanation here -->
+        </div>
+
+        <!-- Search Form Wrapper -->
+        <div class="search-card">
+            <h2>Explore Archive Dates</h2>
+            <form id="search-form">
+                <input type="date" id="search-input" name="search-input" required>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <!-- History Panel -->
+        <div class="history-card">
+            <h3>Search History</h3>
+            <ul id="search-history"></ul>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

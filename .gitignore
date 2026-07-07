@@ -4,8 +4,6 @@
 !/README.md
 
 # Exclude incomplete projects (do not push to git)
-/Project 6 - Retrieve and Display User Information Using IP Address/
-/Project 7 - NASA Picture of the Day/
 /Project 8 - Shopping Cart/
 
 # Exclude local project details
