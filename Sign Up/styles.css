@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #eeab5e;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 320px;
+}
+
+form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid #000000; 
+    border-radius: 8px; 
+    font-size: 16px;
+    color: #000;
+}
+
+.input-group input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Error message styling */
+.error-msg {
+    color: #ff0000; /* Bright red */
+    font-size: 14px;
+    margin-top: 8px;
+    margin-bottom: 12px;
+    min-height: 18px;
+}
+
+button {
+    display: inline-block;
+    width: auto; /* Not full width */
+    padding: 8px 30px;
+    background-color: #ffffff; /* White background */
+    color: #000000; /* Black text */
+    border: 2px solid #000000; /* Thick black border */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #f4f4f4; /* Light gray on hover */
+}
+.success-msg {
+    color: #28a745; /* Green color */
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    min-height: 20px;
+}

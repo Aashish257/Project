@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <!-- Linked Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Changed class to id="main" to match CSS -->
+    <section id="main">
+        <div class="form-container">
+            <form id="signup-form">
+                <h2>Sign Up</h2>
+                
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="example@email.com" required>
+                    <!-- Error placeholder with ID -->
+                    <p id="email-error" class="error-msg"></p>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter password" required>
+                    <!-- Error placeholder with ID -->
+                    <p id="password-error" class="error-msg"></p>
+                </div>
+                <p id="success-msg" class="success-msg"></p>
+                <button type="submit" id="submit-btn">Submit</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Linked Script -->
+    <script src="script.js"></script>
+</body>
+</html>
